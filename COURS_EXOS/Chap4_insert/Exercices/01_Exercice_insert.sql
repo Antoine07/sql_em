@@ -41,3 +41,44 @@ VALUES
     ('FRE2', 'paris', 'Paris', 'Air Electric' ),
     ('SIN', 'pasir', 'Singapour', 'SIN A' )
     ;
+
+-- ajout d'une colonne 
+
+ALTER TABLE `pilots`
+ADD COLUMN `created` 
+DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE `companies`
+ADD COLUMN `num_street` 
+SMALLINT UNSIGNED;
+
+ALTER TABLE `companies`
+ADD COLUMN `status` 
+ENUM('draft', 'published', 'unpublished') DEFAULT 'draft' ;
+
+
+UPDATE `companies`
+SET `num_street` = 19
+WHERE comp = 'AUS';
+
+UPDATE `companies`
+SET `num_street` = 17
+WHERE comp = 'FRE1';
+
+UPDATE `companies`
+SET `num_street` = 22
+WHERE comp = 'FRE2';
+
+UPDATE `companies`
+SET `num_street` = 15
+WHERE comp = 'SIN';
+
+UPDATE `companies`
+SET `name`= 'CHINA Air'
+WHERE comp = 'chi';
+
+-- pour ajouter plusieurs colonnes en même temp
+ALTER TABLE `pilots`
+ADD COLUMN `birth_date` DATETIME, 
+ADD COLUMN  `next_flight` DATETIME,
+ADD COLUMN `num_jobs` SMALLINT UNSIGNED ;
