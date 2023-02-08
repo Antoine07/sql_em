@@ -19,3 +19,20 @@ WHERE comp IN (
     FROM pilots
     WHERE num_flying < 90
 );
+
+
+-- 02
+/*
+
+Sélectionnez le/les pilote(s) ayant fait le plus d'heures de vol sans utiliser l'opérateur MAX ni la clause ORDER BY. Puis sélectionnez les nombres d'heures de vol sauf le plus grand.
+
+*/
+
+SELECT name, num_flying
+FROM pilots
+WHERE num_flying >= ALL(SELECT num_flying FROM pilots);
+
+
+SELECT name, num_flying
+FROM pilots
+WHERE num_flying < ANY(SELECT num_flying FROM pilots);
