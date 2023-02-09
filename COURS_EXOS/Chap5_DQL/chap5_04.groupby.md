@@ -50,13 +50,35 @@ Par exemple on peut se poser la question y a t il des anomymes dans la table pil
 
 Calculez la moyenne des heures de vol pour chaque compagnie.
 
+```sql
+SELECT 
+company, ROUND(AVG(num_flying), 2) as avg
+FROM pilots 
+GROUP BY company;
+```
+
 02. **Exercice moyenne et bonus**
 
 Calculez la moyenne des heures de vol des pilotes dont le bonus est de 500, par compagnie.
 
+```sql
+SELECT 
+company, ROUND(AVG(num_flying), 2) as avg
+FROM pilots 
+WHERE bonus = 500 
+GROUP BY company ;
+```
+
 03. **Exercice nombre de pilotes**
 
 Sélectionnez les compagnies ayant plus d'un pilote, ainsi que leur nombre de pilotes.
+
+```sql
+SELECT 
+company, ROUND(AVG(num_flying), 2) as avg
+FROM pilots 
+GROUP BY company;
+ ```
 
 04. **Exercice ajout d'une colonne & valeurs**
 
