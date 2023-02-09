@@ -34,6 +34,16 @@ LIMIT
 
 Attention, les colonnes présentes dans le `SELECT` doivent apparaître dans le `GROUP BY`. Seules des fonctions ou expressions peuvent exister en plus dans le `SELECT`.
 
+Par exemple on peut se poser la question y a t il des anomymes dans la table pilots avec un group by comme suit, si la requête ne renvoie rien il n'en n'existe pas dans nos données.
+
+```sql
+ select 
+ name, last_name, count(*) as c 
+ from pilots 
+ group by name, last_name 
+ having c > 1;
+```
+
 ## 01 Exercices group by
 
 01. **Exercice moyenne des heures de vol**

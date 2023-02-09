@@ -138,7 +138,6 @@ WHERE name in ('Yan', 'Pierre');
 - 7. Sélectionnez les coordonnées des compagnies ayant des pilotes dont le nombre d'heures de vol est inférieur à tous les nombres d'heures de vol (chaque heure de vol) des A380.
 
 
-
 ## Sous-requête corrélées avec l'opérateur EXIST
 
 Une sous-requête corrélée est une sous-requête qui contient une référence à une colonne qui est dans une requête différente.
