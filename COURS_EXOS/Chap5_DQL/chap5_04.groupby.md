@@ -188,7 +188,7 @@ DROP PROCEDURE IF EXISTS calculate;
 CREATE PROCEDURE calculate(IN x INT, IN y INT, OUT sum INT)
 BEGIN
   SET sum = x + y;
-END $$;
+END $$
 DELIMITER ;
 
 -- Appel de la procédure dans la console mysql
@@ -260,4 +260,14 @@ CREATE TEMPORARY TABLE comp_companies SELECT '1980-01-01' as c_at , comp, ROUND(
 2. Calculez maintenant par année et par mois avec la même granularité que la question 1 respectivement par rapport à ce dernier regroupement.
 
 
+Annexes
 
+```sql
+SELECT  routine_schema,  
+        routine_name,  
+        routine_type 
+FROM information_schema.routines 
+WHERE routine_schema = 'db_aviation' 
+ORDER BY routine_name;  
+
+``` 
