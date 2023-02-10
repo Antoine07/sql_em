@@ -101,3 +101,14 @@ FROM `pilots` as `p`
 LEFT JOIN `companies`as `c`
 ON `p`.`company`= `c`.`comp`
 WHERE  `p`.`company` IS NULL;
+
+--- 06
+
+-- non implémenter FULL OUTER JOIN 
+
+
+SELECT c.name as company_name, p.certificate, CONCAT_WS(' ',p.name, p.last_name) as fullName
+FROM companies as c LEFT JOIN pilots as p ON p.company = c.comp
+UNION
+SELECT c.name as company_name, p.certificate, CONCAT_WS(' ',p.name, p.last_name)
+FROM companies as c RIGHT JOIN pilots as p ON p.company = c.comp;
